@@ -11,7 +11,7 @@ fn main() {
     });
 
     println!("Searching for:\t\t'{}'", config.query);
-    println!("In the file:\t\t'{}'", config.file_path);
+    println!("In the file:\t\t'{}'\n---", config.file_path);
 
     if let Err(e) = minigrep::run(config) {
         println!("Application error: {}", e);

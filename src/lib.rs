@@ -20,7 +20,9 @@ impl Config {
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.file_path)?;
 
-    println!("With the text:\n---\n{contents}---");
+    for (i, line) in search(&config.query, &contents).iter().enumerate() {
+        println!("{}-> {}", i + 1, line);
+    }
 
     Ok(())
 }
