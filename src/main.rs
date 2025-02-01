@@ -11,6 +11,10 @@ fn main() {
     println!("Searching for:\t\t'{}'", config.query);
     println!("In the file:\t\t'{}'", config.file_path);
 
+    run(config);
+}
+
+fn run(config: Config) {
     let contents =
         fs::read_to_string(config.file_path).expect("Something went wrong reading the file");
 
